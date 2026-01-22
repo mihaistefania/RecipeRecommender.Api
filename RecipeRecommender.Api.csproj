@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientApp\**" />
+    <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="ClientApp\**" />
+    <None Remove="ClientApp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="DataSet\food_recipes.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DataSet\food_recipes.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.23" />
+    <PackageReference Include="Recombee.ApiClient" Version="6.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+</Project>
